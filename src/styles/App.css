@@ -1,0 +1,426 @@
+:root {
+  --primary-color: #2c5530;
+  --secondary-color: #4a7c59;
+  --accent-color: #8fb996;
+  --light-green: #e8f5e8;
+  --dark-text: #2d3748;
+  --light-text: #718096;
+}
+
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e8 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header mejorado */
+.dino-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dino-logo {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #fff, #e8f5e8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.dino-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Navegación mejorada */
+.nav-tabs {
+  border-bottom: 3px solid var(--accent-color);
+  background: white;
+  border-radius: 15px 15px 0 0;
+  padding: 0 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.nav-tabs .nav-link {
+  color: var(--dark-text);
+  font-weight: 600;
+  border: none;
+  padding: 12px 24px;
+  margin: 0 5px;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-tabs .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: var(--light-green);
+  color: var(--primary-color);
+}
+
+.nav-tabs .nav-link:hover::before {
+  width: 80%;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+}
+
+.nav-tabs .nav-link.active::before {
+  width: 100%;
+}
+
+/* Cards mejoradas */
+.card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  padding: 20px 25px;
+  border-radius: 20px 20px 0 0 !important;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* Botones mejorados */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 85, 48, 0.4);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Badges mejorados */
+.badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Progress bars mejoradas */
+.progress {
+  border-radius: 15px;
+  background-color: #e9ecef;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  height: 20px;
+}
+
+.progress-bar {
+  border-radius: 15px;
+  transition: width 0.8s ease;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+  box-shadow: 0 2px 8px rgba(44, 85, 48, 0.3);
+}
+
+/* Formularios mejorados */
+.form-control {
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(143, 185, 150, 0.2);
+  transform: translateY(-2px);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 8px;
+}
+
+/* Alertas mejoradas */
+.alert {
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  color: #155724;
+  border-left: 5px solid #28a745;
+}
+
+.alert-danger {
+  background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+  color: #721c24;
+  border-left: 5px solid #dc3545;
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.actualizando {
+  animation: pulse 2s infinite;
+}
+
+.card {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Estados de envío con iconos */
+.estado-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.estado-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.estado-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.estado-recepcion .estado-icon { background: var(--primary-color); }
+.estado-despacho .estado-icon { background: var(--secondary-color); }
+.estado-transito .estado-icon { background: #ffc107; }
+.estado-entregado .estado-icon { background: #28a745; }
+
+/* Botón de adelantar tiempo */
+.btn-time-skip {
+  background: linear-gradient(135deg, #6c757d, #495057);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.btn-time-skip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+  background: linear-gradient(135deg, #495057, #6c757d);
+}
+
+/* Timeline de estados */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 60px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 16px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  border: 4px solid white;
+  box-shadow: 0 0 0 3px var(--accent-color);
+}
+
+.timeline-item.active .timeline-dot {
+  background: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--accent-color), 0 0 20px rgba(44, 85, 48, 0.5);
+  animation: pulse 2s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .nav-tabs .nav-link {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .dino-logo {
+    font-size: 1.8rem;
+  }
+}
+
+/* Estilos para el logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-placeholder {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.logo-placeholder:hover {
+  transform: scale(1.05) rotate(5deg);
+  border-color: rgba(255,255,255,0.5);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.logo-image {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
+}
+
+.brand-text {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .logo-placeholder {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .brand-text h1 {
+    font-size: 1.4rem !important;
+  }
+  
+  .dino-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-placeholder {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  .brand-text h1 {
+    font-size: 1.2rem !important;
+  }
+  
+  .brand-text {
+    min-width: 120px;
+  }
+}
